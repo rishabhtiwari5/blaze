@@ -9,6 +9,7 @@ import EmojiPicker from "emoji-picker-react";
 const CreatePost = () => {
 	const [text, setText] = useState("");
 	const [img, setImg] = useState(null);
+	
 	const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 	const imgRef = useRef(null);
 
