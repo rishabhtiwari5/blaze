@@ -13,6 +13,7 @@ const Sidebar = () => {
 	const { mutate: logout } = useMutation({
 		mutationFn: async () => {
 			try {
+				
 				const res = await fetch("/api/auth/logout", {
 					method: "POST",
 				});
@@ -22,6 +23,7 @@ const Sidebar = () => {
 					throw new Error(data.error || "Something went wrong");
 				}
 			} catch (error) {
+				
 				throw new Error(error);
 			}
 		},
@@ -73,6 +75,8 @@ const Sidebar = () => {
 						</Link>
 					</li>
 				</ul>
+
+				
 
 				
 				{authUser && (
