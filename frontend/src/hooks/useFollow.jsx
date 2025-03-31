@@ -5,7 +5,9 @@ const useFollow = () => {
 	const queryClient = useQueryClient();
 
 	const { mutate: follow, isPending } = useMutation({
+		
 		mutationFn: async (userId) => {
+			
 			try {
 				const res = await fetch(`/api/users/follow/${userId}`, {
 					method: "POST",
@@ -20,6 +22,7 @@ const useFollow = () => {
 				throw new Error(error.message);
 			}
 		},
+		
 		onSuccess: () => {
 			Promise.all([
 				queryClient.invalidateQueries({ queryKey: ["suggestedUsers"] }),
