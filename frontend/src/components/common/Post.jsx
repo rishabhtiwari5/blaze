@@ -44,6 +44,8 @@ const Post = ({ post }) => {
 		},
 	});
 
+	
+
 	const { mutate: likePost, isPending: isLiking } = useMutation({
 		mutationFn: async () => {
 			try {
