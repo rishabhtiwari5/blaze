@@ -9,7 +9,9 @@ import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 
 const NotificationPage = () => {
+	
 	const queryClient = useQueryClient();
+	
 	const { data: notifications, isLoading } = useQuery({
 		queryKey: ["notifications"],
 		queryFn: async () => {
@@ -53,9 +55,11 @@ const NotificationPage = () => {
 				<div className='flex justify-between items-center p-4 border-b border-gray-700'>
 					<p className='font-bold'>Notifications</p>
 					<div className='dropdown '>
+						
 						<div tabIndex={0} role='button' className='m-1'>
 							<IoSettingsOutline className='w-4' />
 						</div>
+						
 						<ul
 							tabIndex={0}
 							className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
@@ -65,6 +69,7 @@ const NotificationPage = () => {
 							</li>
 						</ul>
 					</div>
+					
 				</div>
 				{isLoading && (
 					<div className='flex justify-center h-full items-center'>
@@ -90,9 +95,11 @@ const NotificationPage = () => {
 							</Link>
 						</div>
 					</div>
+			
 				))}
 			</div>
 		</>
+		
 	);
 };
 export default NotificationPage;
