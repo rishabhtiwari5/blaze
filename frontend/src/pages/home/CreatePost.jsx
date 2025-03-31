@@ -100,7 +100,10 @@ const CreatePost = () => {
 								imgRef.current.value = null;
 							}}
 						/>
+						
 						<img src={img} className='w-full mx-auto h-72 object-contain rounded' />
+
+						
 					</div>
 				)}
 
@@ -110,6 +113,7 @@ const CreatePost = () => {
 							className='fill-primary w-6 h-6 cursor-pointer'
 							onClick={() => imgRef.current.click()}
 						/>
+						
 						<div className='relative'>
 							<BsEmojiSmileFill 
 								className='fill-primary w-5 h-5 cursor-pointer' 
@@ -121,6 +125,7 @@ const CreatePost = () => {
 									<EmojiPicker onEmojiClick={onEmojiClick} />
 									
 								</div>
+			
 							)}
 						</div>
 						
@@ -129,8 +134,11 @@ const CreatePost = () => {
 					<button className='btn btn-primary rounded-full btn-sm text-white px-4'>
 						{isPending ? "Posting..." : "Post"}
 					</button>
+					
 				</div>
+				
 				{isError && <div className='text-red-500'>{error.message}</div>}
+				
 			</form>
 		</div>
 	);
