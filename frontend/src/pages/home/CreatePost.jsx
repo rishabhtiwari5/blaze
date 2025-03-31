@@ -41,11 +41,13 @@ const CreatePost = () => {
 			}
 		},
 
+		
 		onSuccess: () => {
 			setText("");
 			setImg(null);
 			toast.success("Post created successfully");
 			queryClient.invalidateQueries({ queryKey: ["posts"] });
+			
 		},
 	});
 
@@ -57,10 +59,12 @@ const CreatePost = () => {
 	const handleImgChange = (e) => {
 		const file = e.target.files[0];
 		if (file) {
+			
 			const reader = new FileReader();
 			reader.onload = () => {
 				setImg(reader.result);
 			};
+			
 			reader.readAsDataURL(file);
 		}
 	};
@@ -71,11 +75,14 @@ const CreatePost = () => {
 	};
 
 	return (
+		
 		<div className='flex p-4 items-start gap-4 border-b border-gray-700'>
 			<div className='avatar'>
+				
 				<div className='w-8 rounded-full'>
 					<img src={authUser.profileImg || "/avatar-placeholder.png"} />
 				</div>
+				
 			</div>
 			<form className='flex flex-col gap-2 w-full' onSubmit={handleSubmit}>
 				<textarea
@@ -110,10 +117,13 @@ const CreatePost = () => {
 							/>
 							{showEmojiPicker && (
 								<div className='absolute z-10 top-8 left-0'>
+									
 									<EmojiPicker onEmojiClick={onEmojiClick} />
+									
 								</div>
 							)}
 						</div>
+						
 					</div>
 					<input type='file' accept='image/*' hidden ref={imgRef} onChange={handleImgChange} />
 					<button className='btn btn-primary rounded-full btn-sm text-white px-4'>
