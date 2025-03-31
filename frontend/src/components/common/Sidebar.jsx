@@ -32,6 +32,8 @@ const Sidebar = () => {
 			toast.error("Logout failed");
 		},
 	});
+
+	
 	const { data: authUser } = useQuery({ queryKey: ["authUser"] });
 
 	return (
@@ -71,6 +73,8 @@ const Sidebar = () => {
 						</Link>
 					</li>
 				</ul>
+
+				
 				{authUser && (
 					<Link
 						to={`/profile/${authUser.username}`}
@@ -94,6 +98,8 @@ const Sidebar = () => {
 								}}
 							/>
 						</div>
+
+						
 					</Link>
 				)}
 			</div>
